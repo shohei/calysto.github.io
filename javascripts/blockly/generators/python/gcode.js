@@ -27,7 +27,7 @@ goog.require('Blockly.Python');
 Blockly.Python['gcode_send_string'] = function(block) {
   var value_gcode = Blockly.Python.valueToCode(block, 'gcode', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'arduino.write("'+value_gcode.replace(/'/g,"")+'\\n")\n';
+  var code = 'arduino.write("'+value_gcode.slice(1).slice(0,-1)+'\\n")\n';
   return code;
 };
 
