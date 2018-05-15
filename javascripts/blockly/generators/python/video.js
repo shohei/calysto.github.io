@@ -72,3 +72,8 @@ Blockly.Python['laplacian_filter'] = function(block) {
   return code;
 };
 
+Blockly.Python['terminate_hdmi'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'hdmi_in.close()\nhdmi_out.close()\n';
+  return code;
+};

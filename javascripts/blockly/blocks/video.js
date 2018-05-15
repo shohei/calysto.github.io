@@ -130,4 +130,13 @@ Blockly.Blocks['laplacian_filter'] = {
   }
 };
 
-
+Blockly.Blocks['terminate_hdmi'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Terminate HDMI");
+    this.setPreviousStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
