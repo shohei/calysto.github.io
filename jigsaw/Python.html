@@ -1,9 +1,13 @@
 <html>
 <head>
-  <script src="https://calysto.github.io/javascripts/blockly/blockly_compressed.js"></script>
+<!--   <script src="https://calysto.github.io/javascripts/blockly/blockly_compressed.js"></script>
   <script src="https://calysto.github.io/javascripts/blockly/blocks_compressed.js"></script>
   <script src="https://calysto.github.io/javascripts/blockly/python_compressed.js"></script>
-  <script src="https://calysto.github.io/javascripts/blockly/msg/js/en.js"></script>
+  <script src="https://calysto.github.io/javascripts/blockly/msg/js/en.js"></script> -->
+  <script src="http://localhost:8000/javascripts/blockly/blockly_compressed.js"></script>
+  <script src="http://localhost:8000/javascripts/blockly/blocks_compressed.js"></script>
+  <script src="http://localhost:8000/javascripts/blockly/python_compressed.js"></script>
+  <script src="http://localhost:8000/javascripts/blockly/msg/js/en.js"></script>
   <style>
     html, body {
       height: 100%;
@@ -384,7 +388,10 @@
       <block type="expression_value"></block>
     </category>
     <sep></sep>
-    <category name="Overlay"></category>
+    <category name="Overlay">
+      <block type="overlay"></block> 
+    </category>
+    <category name="Arduino-code"></category>
     <category name="G-code"></category>
     <category name="OpenCV"></category>
     <category name="HW Accel"></category>
