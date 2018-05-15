@@ -73,6 +73,7 @@ Blockly.Blocks['setup_pipeline'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Setup video pipeline");
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
  this.setTooltip("");
