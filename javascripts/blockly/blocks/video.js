@@ -57,6 +57,18 @@ Blockly.Blocks['hdmi_tie'] = {
   }
 };
 
+Blockly.Blocks['setup_pipeline'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Setup video pipeline");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['hdmi_readframe'] = {
   init: function() {
     this.appendDummyInput()
@@ -69,17 +81,6 @@ Blockly.Blocks['hdmi_readframe'] = {
   }
 };
 
-Blockly.Blocks['setup_pipeline'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Setup video pipeline");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 Blockly.Blocks['hdmi_writeframe'] = {
   init: function() {
@@ -153,4 +154,5 @@ Blockly.Blocks['new_framebuffer'] = {
  this.setHelpUrl("");
   }
 };
+
 
