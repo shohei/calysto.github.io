@@ -1,8 +1,4 @@
-/**
- * @license
- * Visual Blocks Editor
- *
- * Copyright 2012 Google Inc.
+/* * @license * Visual Blocks Language * * Copyright 2012 Google Inc.
  * https://developers.google.com/blockly/
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,29 +15,17 @@
  */
 
 /**
- * @fileoverview Variable blocks for Blockly.
+ * @fileoverview Generating Python for logic blocks.
  * @author shoaok@gmail.com (Shohei Aoki)
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.ui');
+goog.provide('Blockly.Python.ui');
 
-goog.require('Blockly.Blocks');
+goog.require('Blockly.Python');
 
-
-/**
- * Common HSV hue for all blocks in this category.
- */
-// Blockly.Blocks.ui.HUE = 150;
-
-Blockly.Blocks['gamepad'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("gamepad");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(315);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
+Blockly.Python['gamepad'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'import ipywidgets\nipywidgets.Controller()\n';
+  return code;
 };
