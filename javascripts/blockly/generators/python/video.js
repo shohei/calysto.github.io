@@ -35,3 +35,54 @@ Blockly.Python['hdmi_tie'] = function(block) {
   var code = 'hdmi_in.tie(hdmi_out)\n';
   return code;
 };
+
+Blockly.Python['setup_pipeline'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'import time\nimport cv2\nimport numpy as np\ngrayscale = np.ndarray(shape=(hdmi_in.mode.height, hdmi_in.mode.width), dtype=np.uint8)\nresult = np.ndarray(shape=(hdmi_in.mode.height, hdmi_in.mode.width), dtype=np.uint8)\n';
+  return code;
+};
+
+Blockly.Python['hdmi_readframe'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'inframe = hdmi_in.readframe()\n';
+  return code;
+};
+
+Blockly.Python['hdmi_writeframe'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'hdmi_out.writeframe(outframe)\n';
+  return code;
+};
+
+Blockly.Python['rgb2gray'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'cv2.cvtColor(inframe,cv2.COLOR_RGB2GRAY,dst=grayscale)\n';
+  return code;
+};
+
+Blockly.Python['gray2rgb'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'cv2.cvtColor(result, cv2.COLOR_GRAY2RGB,dst=outframe)\n';
+  return code;
+};
+
+Blockly.Python['free_framebuffer'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'inframe.freebuffer()\n';
+  return code;
+};
+
+Blockly.Python['laplacian_filter'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'cv2.Laplacian(grayscale, cv2.CV_8U, dst=result)\n';
+  return code;
+};
+
+Blockly.Python['new_framebuffer'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'outframe = hdmi_out.newframe()\n';
+  return code;
+};
+
+
+

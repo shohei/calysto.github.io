@@ -56,3 +56,100 @@ Blockly.Blocks['hdmi_tie'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['hdmi_readframe'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("HDMI readframe");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['setup_pipeline'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Setup video pipeline");
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['hdmi_writeframe'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("HDMI writeframe");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['rgb2gray'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("RGB2GRAY");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['gray2rgb'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("GRAY2RGB");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['free_framebuffer'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("free input framebuffer");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['laplacian_filter'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Laplacian filter");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['new_framebuffer'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Generate output framebuffer");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
