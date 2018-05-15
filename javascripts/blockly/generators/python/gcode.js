@@ -20,14 +20,28 @@
  */
 'use strict';
 
-goog.provide('Blockly.Python.overlay');
+goog.provide('Blockly.Python.gcode');
 
 goog.require('Blockly.Python');
 
-
-Blockly.Python['overlay'] = function(block) {
-  var dropdown_bitstream = block.getFieldValue('bitstream');
+Blockly.Python['gcode_send_string'] = function(block) {
+  var value_gcode = Blockly.Python.valueToCode(block, 'gcode', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'from pynq.overlays.base import BaseOverlay\nbase = BaseOverlay("'+dropdown_bitstream+'")\n';
+  var code = 'arduino.write('+value_gcode+')\n';
   return code;
 };
+
+Blockly.Python['gcode_send_file'] = function(block) {
+  var value_gcode = Blockly.Python.valueToCode(block, 'gcode', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['homing'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'G28\n';
+  return code;
+};
+
+
