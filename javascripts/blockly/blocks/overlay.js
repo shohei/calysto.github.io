@@ -22,7 +22,7 @@
  * @fileoverview Variable blocks for Blockly.
  * @author shoaok@gmail.com (Shohei Aoki)
  */
- 
+
 'use strict';
 
 goog.provide('Blockly.Blocks.overlay');
@@ -40,6 +40,7 @@ Blockly.Blocks['overlay'] = {
    * @this Blockly.Block
    */
   init: function() {
+    this.setColour(Blockly.Blocks.logic.HUE);
     this.appendDummyInput()
         .appendField("Set overlay to")
         .appendField(new Blockly.FieldDropdown([
@@ -48,8 +49,6 @@ Blockly.Blocks['overlay'] = {
                         ["overlay2.bit","overlay2.bit"]]), 
                     "bitstream");
     this.setNextStatement(true, null);
-    this.setColour(0);
-    this.setHelpUrl(Blockly.Msg.OVERLAY_HELPURL);
-    this.setColour(Blockly.Blocks.overlay.HUE);
+    // this.setHelpUrl(Blockly.Msg.OVERLAY_HELPURL);
   },
 };
