@@ -118,35 +118,10 @@ Blockly.Blocks['gray2rgb'] = {
   }
 };
 
-Blockly.Blocks['free_framebuffer'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("free input framebuffer");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 Blockly.Blocks['laplacian_filter'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Laplacian filter");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-
-Blockly.Blocks['new_framebuffer'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Generate output framebuffer");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);

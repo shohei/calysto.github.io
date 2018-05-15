@@ -56,19 +56,13 @@ Blockly.Python['hdmi_writeframe'] = function(block) {
 
 Blockly.Python['rgb2gray'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'cv2.cvtColor(inframe,cv2.COLOR_RGB2GRAY,dst=grayscale)\n';
+  var code = 'cv2.cvtColor(inframe,cv2.COLOR_RGB2GRAY,dst=grayscale)\ninframe.freebuffer()\n';
   return code;
 };
 
 Blockly.Python['gray2rgb'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'cv2.cvtColor(result, cv2.COLOR_GRAY2RGB,dst=outframe)\n';
-  return code;
-};
-
-Blockly.Python['free_framebuffer'] = function(block) {
-  // TODO: Assemble Python into code variable.
-  var code = 'inframe.freebuffer()\n';
+  var code = 'outframe = hdmi_out.newframe()\ncv2.cvtColor(result, cv2.COLOR_GRAY2RGB,dst=outframe)\n';
   return code;
 };
 
@@ -77,12 +71,4 @@ Blockly.Python['laplacian_filter'] = function(block) {
   var code = 'cv2.Laplacian(grayscale, cv2.CV_8U, dst=result)\n';
   return code;
 };
-
-Blockly.Python['new_framebuffer'] = function(block) {
-  // TODO: Assemble Python into code variable.
-  var code = 'outframe = hdmi_out.newframe()\n';
-  return code;
-};
-
-
 
