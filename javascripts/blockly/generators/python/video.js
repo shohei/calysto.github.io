@@ -24,13 +24,13 @@ goog.provide('Blockly.Python.video');
 
 goog.require('Blockly.Python');
 
-Blockly.JavaScript['hdmi_setup'] = function(block) {
+Blockly.Python['hdmi_setup'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'hdmi_in = base.video.hdmi_in\nhdmi_out = base.video.hdmi_out\nhdmi_in.configure()\nhdmi_out.configure(hdmi_in.mode)\nhdmi_in.start()\nhdmi_out.start()\n';
   return code;
 };
 
-Blockly.JavaScript['hdmi_tie'] = function(block) {
+Blockly.Python['hdmi_tie'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'hdmi_in.tie(hdmi_out)\n';
   return code;
