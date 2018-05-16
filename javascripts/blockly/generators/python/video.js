@@ -80,13 +80,13 @@ Blockly.Python['terminate_hdmi'] = function(block) {
 
 Blockly.Python['init_ncs'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'from mvnc import mvncapi as mvnc\nimport cv2\nimport numpy as np\nimport time\nimport yolo_ncs,ncs\nncsdev = ncs.MovidiusNCS()\nif ncsdev.load_graph('../graph'):\n    print('Graph file loaded to Movidius NCS')\nframe_in_width = hdmi_in.mode.width\nframe_in_height = hdmi_in.mode.height\nyolo_width = 448\nyolo_height = 448\nframe_top = (frame_in_height-yolo_height)//2\nframe_bot = frame_in_height-frame_top\nframe_left = (frame_in_width-yolo_width)//2\nframe_right = frame_in_width-frame_left\n';
+  var code = "from mvnc import mvncapi as mvnc\nimport cv2\nimport numpy as np\nimport time\nimport yolo_ncs,ncs\nncsdev = ncs.MovidiusNCS()\nif ncsdev.load_graph('../graph'):\n    print('Graph file loaded to Movidius NCS')\nframe_in_width = hdmi_in.mode.width\nframe_in_height = hdmi_in.mode.height\nyolo_width = 448\nyolo_height = 448\nframe_top = (frame_in_height-yolo_height)//2\nframe_bot = frame_in_height-frame_top\nframe_left = (frame_in_width-yolo_width)//2\nframe_right = frame_in_width-frame_left\n";
   return code;
 };
 
 Blockly.Python['run_yolo'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'small_frame = inframe[frame_top:frame_bot,frame_left:frame_right,:]\nncs_frame = small_frame.copy()/255.0\nncsdev.graph.LoadTensor(ncs_frame.astype(np.float16), 'user object')\nout, userobj = ncsdev.graph.GetResult()\nresults = yolo_ncs.interpret_output(out.astype(np.float32), small_frame.shape[1], small_frame.shape[0])\nimg_res = yolo_ncs.draw_boxes(small_frame, results, small_frame.shape[1], small_frame.shape[0])\noutframe = hdmi_out.newframe()\noutframe[frame_top:frame_bot,frame_left:frame_right,:] = img_res[:,:,:]\n';
+  var code = "small_frame = inframe[frame_top:frame_bot,frame_left:frame_right,:]\nncs_frame = small_frame.copy()/255.0\nncsdev.graph.LoadTensor(ncs_frame.astype(np.float16), 'user object')\nout, userobj = ncsdev.graph.GetResult()\nresults = yolo_ncs.interpret_output(out.astype(np.float32), small_frame.shape[1], small_frame.shape[0])\nimg_res = yolo_ncs.draw_boxes(small_frame, results, small_frame.shape[1], small_frame.shape[0])\noutframe = hdmi_out.newframe()\noutframe[frame_top:frame_bot,frame_left:frame_right,:] = img_res[:,:,:]\n";
   return code;
 };
 

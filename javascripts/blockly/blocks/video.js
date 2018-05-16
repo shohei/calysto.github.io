@@ -81,7 +81,6 @@ Blockly.Blocks['hdmi_readframe'] = {
   }
 };
 
-
 Blockly.Blocks['hdmi_writeframe'] = {
   init: function() {
     this.appendDummyInput()
