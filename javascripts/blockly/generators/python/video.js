@@ -26,7 +26,14 @@ goog.require('Blockly.Python');
 
 Blockly.Python['hdmi_setup'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = 'hdmi_in = base.video.hdmi_in\nhdmi_out = base.video.hdmi_out\nhdmi_in.configure()\nhdmi_out.configure(hdmi_in.mode)\nhdmi_in.start()\nhdmi_out.start()\n';
+  var dropdown_name = block.getFieldValue('NAME');
+  if(dropdown_name=='gray'){
+    var code = 'hdmi_in = base.video.hdmi_in\nhdmi_out = base.video.hdmi_out\nhdmi_in.configure(PIXEL_GRAY)\nhdmi_out.configure(hdmi_in.mode)\nhdmi_in.start()\nhdmi_out.start()\n';
+  } else if(dropdown_name=='rgb') {
+    var code = 'hdmi_in = base.video.hdmi_in\nhdmi_out = base.video.hdmi_out\nhdmi_in.configure(PIXEL_RGB)\nhdmi_out.configure(hdmi_in.mode)\nhdmi_in.start()\nhdmi_out.start()\n';
+  } else {
+    var code = 'hdmi_in = base.video.hdmi_in\nhdmi_out = base.video.hdmi_out\nhdmi_in.configure()\nhdmi_out.configure(hdmi_in.mode)\nhdmi_in.start()\nhdmi_out.start()\n';
+  }
   return code;
 };
 

@@ -36,14 +36,15 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['hdmi_setup'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("HDMI setup");
+        .appendField("HDMI setup")
+        .appendField(new Blockly.FieldDropdown([["normal","normal"], ["GRAY","gray"], ["RGB","rgb"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");
-  },
-};
+  }
+};j
 
 Blockly.Blocks['hdmi_tie'] = {
   init: function() {
