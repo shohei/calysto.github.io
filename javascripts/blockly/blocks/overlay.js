@@ -45,7 +45,24 @@ Blockly.Blocks['overlay'] = {
         .appendField("Set overlay to")
         .appendField(new Blockly.FieldDropdown([
                         ["base.bit","base.bit"], 
-                        ["overlay1.bit","overlay1.bit"], 
+                        ["overlay2.bit","overlay2.bit"]]), 
+                    "bitstream");
+    this.setNextStatement(true, null);
+    // this.setHelpUrl(Blockly.Msg.OVERLAY_HELPURL);
+  },
+};
+
+Blockly.Blocks['hdmi_overlay'] = {
+  /**
+   * Block for variable getter.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColour(Blockly.Blocks.logic.HUE);
+    this.appendDummyInput()
+        .appendField("Set BareHDMI overlay to")
+        .appendField(new Blockly.FieldDropdown([
+                        ["xv2Filter2DRemap.bit","/opt/python3.6/lib/python3.6/site-packages/pynq_computervision/overlays/computer_vision/xv2Filter2DRemap.bit"], 
                         ["overlay2.bit","overlay2.bit"]]), 
                     "bitstream");
     this.setNextStatement(true, null);
