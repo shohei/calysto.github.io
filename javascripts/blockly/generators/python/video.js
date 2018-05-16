@@ -132,7 +132,7 @@ Blockly.Python['hardware_filter_2d'] = function(block) {
   } else if(dropdown_name=='ave_blur'){
     var kernel = 'np.ones((3,3),np.float32)/9.0';
   } else if(dropdown_name=='gauss_blur'){
-    var kernel = 'np.array([[0.0625,0.125,0.0625],[0.125,0.25,0.125]';
+    var kernel = 'np.array([[0.0625,0.125,0.0625],[0.125,0.25,0.125],[0.0625,0.125,0.0625]],np.float32)';
   } else if(dropdown_name=='sobel_ver'){
     var kernel = 'np.array([[1.0,0.0,-1.0],[2.0,0.0,-2.0],[1.0,0.0,-1.0]],np.float32)';
   } else if(dropdown_name=='sobel_hor'){
