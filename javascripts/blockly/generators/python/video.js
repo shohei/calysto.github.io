@@ -80,7 +80,7 @@ Blockly.Python['terminate_hdmi'] = function(block) {
 
 Blockly.Python['init_ncs'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'ncsdev = ncs.MovidiusNCS()\nif ncsdev.load_graph('../graph'):\n    print('Graph file loaded to Movidius NCS')\nframe_in_width = hdmi_in.mode.width\nframe_in_height = hdmi_in.mode.height\nyolo_width = 448\nyolo_height = 448\nframe_top = (frame_in_height-yolo_height)//2\nframe_bot = frame_in_height-frame_top\nframe_left = (frame_in_width-yolo_width)//2\nframe_right = frame_in_width-frame_left\n';
+  var code = 'from mvnc import mvncapi as mvnc\nimport cv2\nimport numpy as np\nimport time\nimport yolo_ncs,ncs\nncsdev = ncs.MovidiusNCS()\nif ncsdev.load_graph('../graph'):\n    print('Graph file loaded to Movidius NCS')\nframe_in_width = hdmi_in.mode.width\nframe_in_height = hdmi_in.mode.height\nyolo_width = 448\nyolo_height = 448\nframe_top = (frame_in_height-yolo_height)//2\nframe_bot = frame_in_height-frame_top\nframe_left = (frame_in_width-yolo_width)//2\nframe_right = frame_in_width-frame_left\n';
   return code;
 };
 
