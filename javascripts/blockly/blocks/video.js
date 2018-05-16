@@ -44,7 +44,7 @@ Blockly.Blocks['hdmi_setup'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};j
+};
 
 Blockly.Blocks['hdmi_tie'] = {
   init: function() {
