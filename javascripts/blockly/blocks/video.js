@@ -202,3 +202,15 @@ Blockly.Blocks['hardware_filter_2d'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['init_filter_2d'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initialize 2D filter");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

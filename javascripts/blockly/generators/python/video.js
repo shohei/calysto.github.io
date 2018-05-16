@@ -115,6 +115,7 @@ Blockly.Python['software_filter_2d'] = function(block) {
   var code = 'outframe = hdmi_out.newframe()\ncv2.filter2D(inframe, -1, '+kernel+', dst=outframe, borderType=cv2.BORDER_CONSTANT)\n';
   return code;
 };
+
 Blockly.Python['hardware_filter_2d'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   if(dropdown_name=='lap_high'){
@@ -132,5 +133,11 @@ Blockly.Python['hardware_filter_2d'] = function(block) {
   }
   // TODO: Assemble Python into code variable.
   var code = 'outframe = hdmi_out.newframe()\nxv2.filter2D(inframe, -1, '+kernel+', dst=outframe, borderType=cv2.BORDER_CONSTANT)\n';
+  return code;
+};
+
+Blockly.Python['init_filter_2d'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'height = hdmi_in.mode.height\nwidth = hdmi_in.mode.width\nbpp = hdmi_in.mode.bits_per_pixel\n';
   return code;
 };
