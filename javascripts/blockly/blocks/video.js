@@ -140,3 +140,40 @@ Blockly.Blocks['terminate_hdmi'] = {
  this.setHelpUrl("");
   }
 };
+
+
+Blockly.Blocks['init_ncs'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initialize NCS");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['run_yolo'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Run YOLO");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['terminate_ncs'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Terminate NCS");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
