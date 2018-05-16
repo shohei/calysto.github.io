@@ -35,6 +35,6 @@ Blockly.Python['overlay'] = function(block) {
 Blockly.Python['hdmi_overlay'] = function(block) {
   var dropdown_bitstream = block.getFieldValue('bitstream');
   // TODO: Assemble Python into code variable.
-  var code = 'from pynq_computervision import BareHDMIOverlay\nbase = BareHDMIOverlay("'+dropdown_bitstream+'")\nfrom pynq import Xlnk\nmem_manager = Xlnk()\nimport pynq_computervision.overlays.computer_vision.xv2Filter2DRemap as xv2\n';
+  var code = 'from pynq_computervision import BareHDMIOverlay\nbase = BareHDMIOverlay("'+dropdown_bitstream+'")\nfrom pynq import Xlnk\nmem_manager = Xlnk()\nimport pynq_computervision.overlays.computer_vision.xv2Filter2DRemap as xv2\nheight = hdmi_in.mode.height\nwidth = hdmi_in.mode.width\nbpp = hdmi_in.mode.bits_per_pixel\n';
   return code;
 };

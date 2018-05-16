@@ -176,3 +176,29 @@ Blockly.Blocks['terminate_ncs'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['software_filter_2d'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Software 2D filter kernel")
+        .appendField(new Blockly.FieldDropdown([["sobel (vertical)","sobel_ver"], ["sobel (horizontal)","sobel_hor"], ["Laplacian (high-pass)","lap_high"], ["Gaussian (high-pass)","gauss_high"], ["Average blur","ave_blur"], ["Gaussian blur","gauss_blur"]]), "NAME");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['hardware_filter_2d'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Hardware 2D filter kernel")
+        .appendField(new Blockly.FieldDropdown([["sobel (vertical)","sobel_ver"], ["sobel (horizontal)","sobel_hor"], ["Laplacian (high-pass)","lap_high"], ["Gaussian (high-pass)","gauss_high"], ["Average blur","ave_blur"], ["Gaussian blur","gauss_blur"]]), "NAME");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
