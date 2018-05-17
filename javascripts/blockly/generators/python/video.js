@@ -175,4 +175,12 @@ Blockly.Python['hdmi_writeframe_center_angle'] = function(block) {
   return code;
 };
 
+Blockly.Python['send_g1_x_y'] = function(block) {
+  var value_x = Blockly.Python.valueToCode(block, 'X', Blockly.Python.ORDER_ATOMIC);
+  var value_y = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'arduino.write("G1 X'+X+' Y'+Y+'\\n")\n';
+  return code;
+};
+
 

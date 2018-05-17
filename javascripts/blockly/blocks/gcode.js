@@ -73,3 +73,21 @@ Blockly.Blocks['send_gcode_file'] = {
   }
 };
 
+Blockly.Blocks['send_g1_x_y'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Send G1");
+    this.appendValueInput("X")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_CENTRE)
+        .appendField("X");
+    this.appendValueInput("Y")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_CENTRE)
+        .appendField("Y");
+    this.setInputsInline(true);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
