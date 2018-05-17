@@ -85,6 +85,8 @@ Blockly.Blocks['send_g1_x_y'] = {
         .setCheck(null)
         .setAlign(Blockly.ALIGN_CENTRE)
         .appendField("Y");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setInputsInline(true);
     this.setColour(90);
  this.setTooltip("");
