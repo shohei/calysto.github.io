@@ -150,11 +150,12 @@ Blockly.Python['init_filter_2d'] = function(block) {
 };
 
 Blockly.Python['binarize'] = function(block) {
-  var number_name = block.getFieldValue('NAME');
+  var text_name = block.getFieldValue('NAME');
   // TODO: Assemble Python into code variable.
-  var code = 'gray = cv2.cvtColor(inframe, cv2.COLOR_BGR2GRAY)\npreprocessed = cv2.GaussianBlur(gray, (5, 5), 0)\n_, binary = cv2.threshold(preprocessed, '+number_name+', 255, cv2.THRESH_BINARY)\nbinary = cv2.bitwise_not(binary)\n';
+  var code = 'gray = cv2.cvtColor(inframe, cv2.COLOR_BGR2GRAY)\npreprocessed = cv2.GaussianBlur(gray, (5, 5), 0)\n_, binary = cv2.threshold(preprocessed, '+text_name+', 255, cv2.THRESH_BINARY)\nbinary = cv2.bitwise_not(binary)\n';
   return code;
 };
+
 
 Blockly.Python['hdmi_writeframe_binary'] = function(block) {
   // TODO: Assemble Python into code variable.

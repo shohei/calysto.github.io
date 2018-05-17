@@ -220,10 +220,8 @@ Blockly.Blocks['binarize'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Binarize with threshold")
-        .appendField(new Blockly.FieldNumber(80, 0, 255, 10), "NAME");
+        .appendField(new Blockly.FieldTextInput("80"), "NAME");
     this.setColour(230);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
  this.setTooltip("");
  this.setHelpUrl("");
   }
