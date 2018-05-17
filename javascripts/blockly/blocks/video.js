@@ -222,6 +222,8 @@ Blockly.Blocks['binarize'] = {
         .appendField("Binarize with threshold")
         .appendField(new Blockly.FieldTextInput("80"), "NAME");
     this.setColour(230);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
  this.setTooltip("");
  this.setHelpUrl("");
   }
