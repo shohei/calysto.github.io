@@ -40,7 +40,7 @@ Blockly.Python['homing'] = function(block) {
 Blockly.Python['send_gcode_file'] = function(block) {
   var dropdown_gcode_filename = block.getFieldValue('gcode_filename');
   // TODO: Assemble Python into code variable.
-  var code = "import time\narduino.write('G1 Z0.325 F3000\n')\ntime.sleep(15)\nwith open('data/20mm_cube.gcode') as file:\n    lines = file.readlines()\n    for idx,line in enumerate(lines):\n        cmd = line.strip()+'\n'\n        if(cmd[0]==';'):\n            continue\n        time.sleep(0.7)\n        arduino.write(cmd)\n';\n"
+  var code = "import time\narduino.write('G1 Z0.325 F3000\n')\ntime.sleep(15)\nwith open('data/20mm_cube.gcode') as file:\n    lines = file.readlines()\n    for idx,line in enumerate(lines):\n        cmd = line.strip()+'\n'\n        if(cmd[0]==';'):\n            continue\n        time.sleep(0.7)\n        arduino.write(cmd)\n';\n";
   return code;
 };
 
