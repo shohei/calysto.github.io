@@ -34,7 +34,7 @@ goog.require('Blockly.Blocks');
  */
 Blockly.Blocks.gcode.HUE = 90;
 
-Blockly.Blocks['gcode_send_string'] = {
+Blockly.Blocks['send_gcode_string'] = {
   init: function() {
     this.appendValueInput("gcode")
         .setCheck("String")
@@ -47,18 +47,6 @@ Blockly.Blocks['gcode_send_string'] = {
   }
 };
 
-Blockly.Blocks['gcode_send_file'] = {
-  init: function() {
-    this.appendValueInput("gcode")
-        .setCheck(null)
-        .appendField("Send G-code file");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 Blockly.Blocks['homing'] = {
   init: function() {
@@ -71,3 +59,15 @@ Blockly.Blocks['homing'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['send_gcode_file'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Send gcode file")
+        .appendField(new Blockly.FieldDropdown([["20mm_cube.gcode","20mm_cube.gcode"], ["test1.gcode","test2.gcode"], ["test2.gcode","test3.gcode"]]), "gcode_filename");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+}

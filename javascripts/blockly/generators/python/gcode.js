@@ -24,17 +24,10 @@ goog.provide('Blockly.Python.gcode');
 
 goog.require('Blockly.Python');
 
-Blockly.Python['gcode_send_string'] = function(block) {
+Blockly.Python['send_gcode_string'] = function(block) {
   var value_gcode = Blockly.Python.valueToCode(block, 'gcode', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'arduino.write("'+value_gcode.slice(1).slice(0,-1)+'\\n")\n';
-  return code;
-};
-
-Blockly.Python['gcode_send_file'] = function(block) {
-  var value_gcode = Blockly.Python.valueToCode(block, 'gcode', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '...\n';
   return code;
 };
 
@@ -44,4 +37,10 @@ Blockly.Python['homing'] = function(block) {
   return code;
 };
 
+Blockly.Python['send_gcode_file'] = function(block) {
+  var dropdown_gcode_filename = block.getFieldValue('gcode_filename');
+  // TODO: Assemble Python into code variable.
+  var code = "import time\narduino.write('G1 Z0.325 F3000\n')\ntime.sleep(15)\nwith open('data/20mm_cube.gcode') as file:\n    lines = file.readlines()\n    for idx,line in enumerate(lines):\n        cmd = line.strip()+'\n'\n        if(cmd[0]==';'):\n            continue\n        time.sleep(0.7)\n        arduino.write(cmd)\n';\n"
+  return code;
+};
 
