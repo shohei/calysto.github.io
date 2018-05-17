@@ -241,7 +241,7 @@ Blockly.Blocks['hdmi_writeframe_binary'] = {
   }
 };
 
-Blockly.Blocks['detect_center_and_angle'] = {
+Blockly.Blocks['detect_center_and_angle_return'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Detect center and angle");
@@ -252,6 +252,17 @@ Blockly.Blocks['detect_center_and_angle'] = {
   }
 };
 
+Blockly.Blocks['detect_center_and_angle'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Detect center and angle");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
 Blockly.Blocks['hdmi_writeframe_center_angle'] = {
   init: function() {
