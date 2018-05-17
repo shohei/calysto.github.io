@@ -28,7 +28,7 @@ goog.require('Blockly.Python');
 Blockly.Python['overlay'] = function(block) {
   var dropdown_bitstream = block.getFieldValue('bitstream');
   // TODO: Assemble Python into code variable.
-  var code = 'from pynq.overlays.base import BaseOverlay\nbase = BaseOverlay("'+dropdown_bitstream+'")\n';
+  var code = 'from pynq.overlays.base import BaseOverlay\nbase = BaseOverlay("'+dropdown_bitstream+'")\nimport cv2\nimport numpy as np\n';
   return code;
 };
 

@@ -215,3 +215,58 @@ Blockly.Blocks['init_filter_2d'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['binarize'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Binarize with threshold")
+        .appendField(new Blockly.FieldNumber(80, 0, 255, 10), "NAME");
+    this.setColour(230);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['hdmi_writeframe_binary'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("HDMI writeframe (binary)");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['detect_center_and_angle'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Detect center and angle");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['hdmi_writeframe_center_angle'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("HDMI writeframe (center/angle)");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+
+
+
+

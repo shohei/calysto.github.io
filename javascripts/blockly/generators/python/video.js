@@ -148,3 +148,30 @@ Blockly.Python['init_filter_2d'] = function(block) {
   var code = 'height = hdmi_in.mode.height\nwidth = hdmi_in.mode.width\nbpp = hdmi_in.mode.bits_per_pixel\n';
   return code;
 };
+
+Blockly.Python['binarize'] = function(block) {
+  var number_name = block.getFieldValue('NAME');
+  // TODO: Assemble Python into code variable.
+  var code = 'gray = cv2.cvtColor(inframe, cv2.COLOR_BGR2GRAY)\npreprocessed = cv2.GaussianBlur(gray, (5, 5), 0)\n_, binary = cv2.threshold(preprocessed, '+number_name+', 255, cv2.THRESH_BINARY)\nbinary = cv2.bitwise_not(binary)\n';
+  return code;
+};
+
+Blockly.Python['hdmi_writeframe_binary'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'outframe = hdmi_out.newframe()\ncv2.cvtColor(binary,cv2.COLOR_GRAY2RGB,dst=outframe)\nhdmi_out.writeframe(outframe)\n';
+  return code;
+};
+
+Blockly.Python['detect_center_and_angle'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = "_, contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\nmin_frame_area = 60\nlarge_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > min_frame_area]\nbounding_img = np.copy(inframe)\nfor contour in large_contours:\n    rect = cv2.minAreaRect(contour)\n    box = cv2.boxPoints(rect)\n    box = np.int0(box)\n    cgx = int(rect[0][0])\n    cgy = int(rect[0][1])\n    leftx = int(cgx - (rect[1][0]/2.0))\n    lefty = int(cgy - (rect[1][1]/2.0))\n    angle = round(rect[2],1)\n    cv2.drawContours(bounding_img,[box],0,(0,0,255),2)\n    cv2.circle(bounding_img,(cgx,cgy), 10, (255,0,0), -1)\n    font = cv2.FONT_HERSHEY_SIMPLEX\n    cv2.putText(bounding_img,'Rot: '+str(angle)+'[deg]',(leftx,lefty), font, 0.7, (0,0,0),2,cv2.LINE_AA)\n";
+  return code;
+};
+
+Blockly.Python['hdmi_writeframe_center_angle'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'outframe = hdmi_out.newframe()\noutframe[:] = bounding_img\nhdmi_out.writeframe(outframe)\n';
+  return code;
+};
+
+
