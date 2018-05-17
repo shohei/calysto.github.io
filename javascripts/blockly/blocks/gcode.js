@@ -68,6 +68,9 @@ Blockly.Blocks['send_gcode_file'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
 };
+
+
