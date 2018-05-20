@@ -34,7 +34,7 @@ goog.require('Blockly.Blocks');
  */
 Blockly.Blocks.gcode.HUE = 90;
 
-Blockly.Blocks['gcode_send_string'] = {
+Blockly.Blocks['send_gcode_string'] = {
   init: function() {
     this.appendValueInput("gcode")
         .setCheck("String")
