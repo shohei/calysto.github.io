@@ -98,7 +98,7 @@ Blockly.Blocks['open_gcode_file'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Open G-code file")
-        .appendField(new Blockly.FieldDropdown([["octo.gcode","data/octo.gcode"], ["octo2.gcode","data/octo2.gcode"], ["20mm_cube","data/20mm_cube.gcode"]]), "gcode_file");
+        .appendField(new Blockly.FieldDropdown([["octo.gcode","/home/xilinx/jupyter_notebooks/base/arduino/data/octo.gcode"], ["octo2.gcode","/home/xilinx/jupyter_notebooks/base/arduino/data/octo2.gcode"], ["20mm_cube","/home/xilinx/jupyter_notebooks/base/arduino/data/20mm_cube.gcode"]]), "gcode_file");
     this.setOutput(true, null);
     this.setColour(90);
  this.setTooltip("");
