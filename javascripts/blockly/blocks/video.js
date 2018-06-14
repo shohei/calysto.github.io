@@ -276,7 +276,17 @@ Blockly.Blocks['hdmi_writeframe_center_angle'] = {
   }
 };
 
-
+Blockly.Blocks['save_capture_image'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Save capture image");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(315);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
 
 

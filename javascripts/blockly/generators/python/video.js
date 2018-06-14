@@ -193,3 +193,8 @@ Blockly.Python['send_g1_x_y'] = function(block) {
   return code;
 };
 
+Blockly.Python['save_capture_image'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
