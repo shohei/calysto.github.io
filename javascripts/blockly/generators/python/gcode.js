@@ -31,6 +31,13 @@ Blockly.Python['send_gcode_string'] = function(block) {
   return code;
 };
 
+Blockly.Python['send_gcode_variable'] = function(block) {
+  var value_gcode = Blockly.Python.valueToCode(block, 'gcode', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'arduino.write('+value_gcode.slice(1).slice(0,-1)+')\n';
+  return code;
+};
+
 Blockly.Python['homing'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = 'arduino.write("G28\\n")\n';

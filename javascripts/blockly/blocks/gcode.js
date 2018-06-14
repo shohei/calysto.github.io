@@ -47,6 +47,18 @@ Blockly.Blocks['send_gcode_string'] = {
   }
 };
 
+Blockly.Blocks['send_gcode_variable'] = {
+  init: function() {
+    this.appendValueInput("gcode")
+        .setCheck("String")
+        .appendField("Send G-code variable");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
 Blockly.Blocks['homing'] = {
   init: function() {
