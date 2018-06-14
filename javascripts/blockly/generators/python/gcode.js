@@ -44,3 +44,10 @@ Blockly.Python['send_gcode_file'] = function(block) {
   return code;
 };
 
+Blockly.Python['open_gcode_file'] = function(block) {
+  var dropdown_gcode_file = block.getFieldValue('gcode_file');
+  // TODO: Assemble Python into code variable.
+  var code = "file = open('"+ droopdown_gcode_file +"')\nlines = file.readlines()\n";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};

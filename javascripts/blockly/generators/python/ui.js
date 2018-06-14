@@ -29,3 +29,14 @@ Blockly.Python['gamepad'] = function(block) {
   var code = 'import ipywidgets\nipywidgets.Controller()\n';
   return code;
 };
+
+Blockly.Blocks['measure_distance_laser'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Measure distance (Laser)");
+    this.setOutput(true, null);
+    this.setColour(315);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

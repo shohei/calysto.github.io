@@ -45,3 +45,14 @@ Blockly.Blocks['gamepad'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['measure_distance_laser'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Measure distance (Laser)");
+    this.setOutput(true, null);
+    this.setColour(315);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

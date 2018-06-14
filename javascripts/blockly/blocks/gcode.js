@@ -93,3 +93,15 @@ Blockly.Blocks['send_g1_x_y'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['open_gcode_file'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Open G-code file")
+        .appendField(new Blockly.FieldDropdown([["octo.gcode","data/octo.gcode"], ["octo2.gcode","data/octo2.gcode"], ["20mm_cube","data/20mm_cube.gcode"]]), "gcode_file");
+    this.setOutput(true, null);
+    this.setColour(90);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
