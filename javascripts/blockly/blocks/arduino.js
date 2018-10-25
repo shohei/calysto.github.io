@@ -37,7 +37,7 @@ Blockly.Blocks['arduino'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Set Arduino firmware to")
-        .appendField(new Blockly.FieldDropdown([["arduino_zsprinter.elf","arduino_zsprinter.elf"], ["hoge.elf","hoge.elf"], ["foo.elf","foo.elf"]]), "elf");
+        .appendField(new Blockly.FieldDropdown([["arduino_zsprinter.bin","arduino_zsprinter.bin"]]), "bin");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     // this.setColour(Blockly.Blocks.arduino.HUE); //undefined ??

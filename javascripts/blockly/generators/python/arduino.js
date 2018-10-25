@@ -25,7 +25,7 @@ goog.provide('Blockly.Python.arduino');
 goog.require('Blockly.Python');
 
 Blockly.Python['arduino'] = function(block) {
-  var dropdown_elf = block.getFieldValue('elf');
+  var dropdown_bin = block.getFieldValue('bin');
   // TODO: Assemble Python into code variable.
   var code = 'from pynq.lib.arduino import Arduino_Zsprinter\narduino = Arduino_Zsprinter(base.ARDUINO)\n';
   return code;

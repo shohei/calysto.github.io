@@ -44,8 +44,8 @@ Blockly.Blocks['overlay'] = {
     this.appendDummyInput()
         .appendField("Set overlay to")
         .appendField(new Blockly.FieldDropdown([
-                        ["base.bit","base.bit"], 
-                        ["overlay2.bit","overlay2.bit"]]), 
+                        ["pynquino.bit","/home/xilinx/pynq/overlays/base/pynquino.bit"], 
+                        ["base.bit","/home/xilinx/pynq/overlays/base/base.bit"]]), 
                     "bitstream");
     this.setNextStatement(true, null);
     // this.setHelpUrl(Blockly.Msg.OVERLAY_HELPURL);
@@ -62,8 +62,8 @@ Blockly.Blocks['hdmi_overlay'] = {
     this.appendDummyInput()
         .appendField("Set BareHDMI overlay to")
         .appendField(new Blockly.FieldDropdown([
-                        ["xv2Filter2DRemap.bit","/opt/python3.6/lib/python3.6/site-packages/pynq_computervision/overlays/computer_vision/xv2Filter2DRemap.bit"], 
-                        ["overlay2.bit","overlay2.bit"]]), 
+                          ["xv2Filter2DRemap.bit","/opt/python3.6/lib/python3.6/site-packages/pynq_computervision/overlays/computer_vision/xv2Filter2DRemap.bit"], 
+                        ]), 
                     "bitstream");
     this.setNextStatement(true, null);
     // this.setHelpUrl(Blockly.Msg.OVERLAY_HELPURL);
